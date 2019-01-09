@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-auto">
                             <a href="/">
-                                <img src="img/webcat.svg" alt="logo" class="logo">
+                                <img src="img/webcat.svg" alt="webcat" class="logo">
                             </a>
                         </div>
                         <div class="col-auto">
@@ -57,15 +57,14 @@
         </div>
         <nav class="menu">
             <div class="container">
-                <h2 class="caption fade">МЕНЮ</h2>
                 <ul class="menu_list">
-                    <li><a href="#" class="menu_link fade">ГЛАВНАЯ</a></li>
-                    <li><a href="#" class="menu_link fade">УСЛУГИ</a></li>
-                    <li><a href="#" class="menu_link fade">КЕЙСЫ</a></li>
-                    <li><a href="#" class="menu_link fade">О КОМПАНИИ</a></li>
-                    <li><a href="#" class="menu_link fade">ОТЗЫВЫ</a></li>
-                    <li><a href="#" class="menu_link fade">ВАКАНСИИ</a></li>
-                    <li><a href="#" class="menu_link fade">КОНТАКТЫ</a></li>
+                    <li><a href="#" class="menu_link fade" data="ГЛАВНАЯ">ГЛАВНАЯ</a></li>
+                    <li><a href="#" class="menu_link fade" data="УСЛУГИ">УСЛУГИ</a></li>
+                    <li><a href="#" class="menu_link fade" data="КЕЙСЫ">КЕЙСЫ</a></li>
+                    <li><a href="#" class="menu_link fade" data="О КОМПАНИИ">О КОМПАНИИ</a></li>
+                    <li><a href="#" class="menu_link fade" data="ОТЗЫВЫ">ОТЗЫВЫ</a></li>
+                    <li><a href="#" class="menu_link fade" data="ВАКАНСИИ">ВАКАНСИИ</a></li>
+                    <li><a href="#" class="menu_link fade" data="КОНТАКТЫ">КОНТАКТЫ</a></li>
                 </ul>
             </div>
         </nav>
@@ -98,7 +97,7 @@
                     </div>
                     <div class="col-6">
                         <div class="front_page_wrap">
-                            <div class="scroll">СКРОЛЬТЕ ВНИЗ
+                            <div class="scroll"><div class="scroll_text"><div class="mask" data-text="СКРОЛЬТЕ ВНИЗ"></div>СКРОЛЬТЕ ВНИЗ</div>
                                 <img src="img/back.svg" alt="arrow" class="scroll_arrow">
                             </div>
                         </div>
@@ -461,7 +460,7 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="cases_more">БОЛЬШЕ КЕЙСОВ <img src="img/load_more.png" alt="more" class="cases_more_img"></a>
+            <a href="#" class="button_white cases_more">БОЛЬШЕ КЕЙСОВ <img src="img/load_more.png" alt="more" class="cases_more_img"></a>
         </section>
         <section class="technology">
             <div class="container">
@@ -581,9 +580,169 @@
                 </div>
             </div>
         </section>
+        <section class="about">
+            <div class="container">
+                <h2 class="caption">О WEBCAT</h2>
+                <p class="about_paragraph">Мы решим 95% задач в online. Ключевые направления: web-разработка (сайты, промо-страницы, лендинги, сервисы, доработки сайтов) и трафик (контекстная реклама, таргетинг в ОК, ВК, FB, Insta, тизерные сети , SEO).</p>
+                <div class="row justify-content-around">
+                    <div class="col-auto about_advan">
+                        <h5 class="about_advan_caption">24</h5>
+                        <p class="about_advan_paragraph">работаем в 24 странах</p>
+                    </div>
+                    <div class="col-auto about_advan">
+                        <h5 class="about_advan_caption">20</h5>
+                        <p class="about_advan_paragraph">специалистов в штате (на ноябрь 2018)</p>
+                    </div>
+                    <div class="col-auto about_advan">
+                        <h5 class="about_advan_caption">320<span class="extra">+</span></h5>
+                        <p class="about_advan_paragraph">выполненных проектов</p>
+                    </div>
+                    <div class="col-auto about_advan">
+                        <h5 class="about_advan_caption">120<span class="extra">K$</span></h5>
+                        <p class="about_advan_paragraph">максимальный бюджет проекта</p>
+                    </div>
+                    <div class="col-auto about_advan">
+                        <h5 class="about_advan_caption">5</h5>
+                        <p class="about_advan_paragraph">место среди веб-студии РБ в 2018</p>
+                    </div>
+                </div>
+                <h3 class="steps_caption">3 ПРИЧИНЫ ПОЧЕМУ МЫ С ВАМИ СРАБОТАЕМСЯ:</h3>
+                <h5 class="step_caption">№1 СВОЙ ШТАТ</h5>
+                <p class="step_paragraph">Все специалисты работают у нас в офисе. Это гарант сроков, качества и скорости обратной связи. Нам не на кого «спихнуть» ответственность за ваш проект. Поэтому всё сделаем хорошо.</p>
+                <h5 class="step_caption">№2 МЫ НЕ ЛИДЕРЫ РЫНКА</h5>
+                <p class="step_paragraph">Поэтому мы за небольшой демпинг, чтобы взять вас как кейс. А это еще один аргумент в сторону качества финального продукта. Ведь хороший кейс — это только тогда, когда вам всё понравилось. </p>
+                <h5 class="step_caption">№3 ПРОСТО</h5>
+                <p class="step_paragraph">Мы не долбим вам голову по каждому поводу. Опыт позволяет большинство проблем решать в рамках нашей компании и привлекать вас только на ключевые моменты. Мы стараемся экономить ваше время и внимание.</p>
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-auto">
+                        <h3 class="try_caption">ДАВАЙТЕ ПОРОБУЕМ!</h3>
+                    </div>
+                    <div class="col-auto">
+                        <a href="" class="button_white try_button">ОБСУДИТЬ ПРОЕКТ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="try"></div>
+        </section>
+        <section class="reviews">
+            <div class="container">
+                <h2 class="caption">ОТЗЫВЫ</h2>
+                <div class="row justify-content-between">
+                    <div class="col-auto reviews_block">
+                        <img src="img/quotes.svg" alt="quotes" class="reviews_quotes">
+                        <p class="reviews_text">Выражаю благодарность компании Webcat за разработку сайтов и настройку рекламы. Мы открывали туристическое агенство с нуля, поэтому вопрос получения входящих звонков и заявок стоял очень остро. По факту мы смогли загрузить 3х менеджеров полностью и, уже на протяжении нашего первого сезона, продолжаем получать оговоренные результаты.</p>
+                        <div class="col-auto reviews_author">
+                            <h5 class="reviews_author_name">Кирилл Назаров</h5>
+                            <p class="reviews_author_position">Директор ООО «Димиди Тревел»</p>
+                            <a href="#" class="button_white reviews_button">ЧИТАТЬ ВЕСЬ ОТЗЫВ</a>
+                        </div>
+                    </div>
+                    <div class="col-auto reviews_block">
+                        <img src="img/quotes.svg" alt="quotes" class="reviews_quotes">
+                        <p class="reviews_text">ООО «Денви Тревел» выражает признательность компани WebCat
+                            в лице Камлюка Игоря Сергеевича за плодотворное сотрудничество в течении года. Мы благодарны Вам за добросовестную и качественную работу, всегда интереные и верные решения возникших проблем. Надеемся на сохранение деловых и дружеских отношений и на дальнейшее взаимо-выгодное сотрудничество.</p>
+                        <div class="col-auto reviews_author">
+                            <h5 class="reviews_author_name">Денис Осипник</h5>
+                            <p class="reviews_author_position">Директор ООО «Денви Тревел»</p>
+                            <a href="#" class="button_white reviews_button">ЧИТАТЬ ВЕСЬ ОТЗЫВ</a>
+                        </div>
+                    </div>
+                    <div class="col-auto reviews_block">
+                        <img src="img/quotes.svg" alt="quotes" class="reviews_quotes">
+                        <p class="reviews_text">В апреле этого года познакомились с веб студией WebCat, воспользовались услугой контекстной рекламы и очень довольны. Очень хороший приход с лендинга, около двухсот обращений за истекший период. Сотрудничать с ребятами приятно и комфортно. Работа выполняется быстро и в срок. Будем рады дальнейшему сотрудничеству.</p>
+                        <div class="col-auto reviews_author">
+                            <h5 class="reviews_author_name">Елена Лысенок</h5>
+                            <p class="reviews_author_position">Директор ОДО «Викинг Туристик»</p>
+                            <a href="#" class="button_white reviews_button">ЧИТАТЬ ВЕСЬ ОТЗЫВ</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <a href="#" class="reviews_more"><span class="reviews_more_underline">Показать больше отзывов</span><img src="img/back.svg" alt="arrow" class="reviews_more_arrow"></a>
+                </div>
+            </div>
+        </section>
+        <section class="form">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-6">
+                        <h2 class="form_caption">ОЦЕНИТЬ РАБОТУ</h2>
+                        <p class="form_paragraph">Заполните форму справа и мы в течение 1 часа подготовим варианты работы для вас. Это бесплатно и 100% будет полезно.</p>
+                    </div>
+                    <div class="col-4 offset-1">
+                        <form>
+                            <input class="input" type="text" placeholder="введите ваше имя">
+                            <input class="input input_phone" type="text" placeholder="введите ваш телефон">
+                            <textarea class="textarea" placeholder="опишите в любой форме задачи, проект"></textarea>
+                            <button class="button_white form_button">ПОЛУЧИТЬ ВАРИАНТ РАБОТЫ</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contacts">
+            <div class="map" id="map" data-placemark="img/placemark.png"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-auto contacts_info">
+                        <h3 class="contacts_info_title">КОНТАКТЫ</h3>
+                        <h5 class="contacts_info_subtitle">Адрес:</h5>
+                        <p class="contacts_info_paragraph">г.Минск ул,Казинца 11А-801а</p>
+                        <h5 class="contacts_info_subtitle">Email:</h5>
+                        <a href="mailto:info@webcat.by" class="contacts_info_link">info@webcat.by</a>
+                        <h5 class="contacts_info_subtitle">Адрес:</h5>
+                        <a href="tel:+375298743092" class="contacts_info_link">+375 (29) 874-30-92</a>
+                        <a href="tel:+375296035025" class="contacts_info_link">+375 (29) 603-50-25</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-3 offset-1 webcat">
+                    <a href="/"><img src="img/webcat.svg" alt="webcat" class="logo"></a>
+                    <div>
+                        <div>ООО«ВебКет»</div>
+                        <div>УНП 192975123</div>
+                        <div>г. Минск ул.Казинца 11а</div>
+                        <div>2012-2019 ООО«Вебкет»</div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <a href="#" class="footer_link">Услуги</a>
+                    <a href="#" class="footer_link">Кейсы</a>
+                    <a href="#" class="footer_link">О компании</a>
+                    <a href="#" class="footer_link">Отзывы</a>
+                    <a href="#" class="footer_link">Вакансии</a>
+                    <a href="#" class="footer_link">Контакты</a>
+                </div>
+                <div class="col-3">
+                    <div>Мы в сети:</div>
+                    <a href="#" class="footer_link" target="_blank">Instagram</a>
+                    <a href="#" class="footer_link" target="_blank">Vkontakte</a>
+                    <a href="#" class="footer_link" target="_blank">Behance</a>
+                    <a href="#" class="footer_link">Соглашение об обработке данных</a>
+                    <a href="#" class="footer_link">Политика конфиденциальности</a>
+                </div>
+                <div class="col-3 address">
+                    <div>
+                        <div>г.Минск ул.Казинца 11А-801а</div>
+                        <a href="tel:+375298743092" class="footer_link">+375 (29) 874-30-92</a>
+                        <a href="tel:+375296035025" class="footer_link">+375(29) 603-50-25</a>
+                    </div>
+                    <div>
+                        <div>2018 «Webcat»</div>
+                        <div>Маркетинговое Веб-агенство</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="dist/dependencies.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1.72/?lang=ru_RU" type="text/javascript"></script>
     <script src="dist/app.js"></script>
 </body>
 

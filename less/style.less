@@ -14,6 +14,10 @@ a:hover {
     text-decoration: none;
 }
 
+.ymaps-2-1-72-ground-pane {
+    filter: grayscale(1);
+}
+
 .button {
     position: relative;
     display: block;
@@ -51,6 +55,25 @@ a:hover {
         &::after {
             transform: translateX(0);
         }
+    }
+
+    &:active {
+        transform: translate(1px, 1px);
+    }
+}
+
+.button_white {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: @main;
+    font-weight: bold;
+    border: 1px solid @main;
+    border-radius: 50px;
+    transition: .3s;
+
+    &:hover {
+        box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.2);
     }
 
     &:active {
@@ -267,21 +290,39 @@ a:hover {
             display: none;
         }
 
-        .caption {
-            margin-top: 0;
-        }
-
         &_list {
-            width: 60%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 1000px;
+            height: 370px;
+
+            li {
+                width: 50%;
+                margin-bottom: 20px;
+            }
         }
 
         &_link {
+            position: relative;
             font-size: 3rem;
             color: #fff;
             font-weight: bold;
 
-            &:hover {
+            &::after {
+                content: attr(data);
+                position: absolute;
+                left: 0;
+                width: 0;
                 color: @main;
+                white-space: nowrap;
+                background-color: #161616;
+                overflow: hidden;
+                transition: .5s
+            }
+
+            &:hover::after {
+                width: 100%;
             }
         }
     }
@@ -328,6 +369,29 @@ a:hover {
         left: 0;
         width: 100%;
         font-weight: 300;
+        transition: color .3s;
+
+        &.menu-open {
+            z-index: 101;
+            position: fixed;
+            bottom: 50px;
+            left: 0;
+            color: #fff;
+
+            .front_page_footer {
+                &_link {
+                    color: #fff;
+
+                    &::after {
+                        background-color: #fff;
+                    }
+
+                    &:hover {
+                        color: #000;
+                    }
+                }
+            }
+        }
 
         &_link {
             position: relative;
@@ -371,7 +435,38 @@ a:hover {
             transform-origin: right;
             font-size: .875rem;
             font-weight: bold;
-            opacity: .3;
+
+            &_text {
+                position: relative;
+                color: rgba(0, 0, 0, .3);
+                overflow: hidden;
+
+
+                .mask {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #fff;
+                    overflow: hidden;
+                    animation: mask 4s ease infinite;
+
+                    &::after {
+                        content: attr(data-text);
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        white-space: nowrap;
+                        color: @main;
+                        background-color: #fff;
+                        animation: mask_text 4s ease infinite;
+                    }
+                }
+            }
 
             &_arrow {
                 position: absolute;
@@ -379,6 +474,7 @@ a:hover {
                 right: -10px;
                 transform: translate(100%, -55%) scaleX(-1);
                 width: 25px;
+                opacity: .3;
             }
 
             &::after {
@@ -662,11 +758,17 @@ a:hover {
     }
 
     &_link {
+        position: relative;
         margin-top: 40px;
         display: block;
         color: #fff;
         font-size: .687rem;
         font-weight: 300;
+
+        &:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
 
         &_img {
             margin-right: 5px;
@@ -676,16 +778,8 @@ a:hover {
 
     &_more {
         margin: 70px auto 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         width: 300px;
         height: 80px;
-        color: @main;
-        font-weight: bold;
-        border: 1px solid @main;
-        border-radius: 50px;
-        transition: .3s;
 
         &_img {
             margin-left: 15px;
@@ -693,15 +787,10 @@ a:hover {
         }
 
         &:hover {
-            box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.2);
 
             .cases_more_img {
                 transform: rotate(360deg);
             }
-        }
-
-        &:active {
-            transform: translate(1px, 1px);
         }
     }
 }
@@ -755,6 +844,302 @@ a:hover {
                 }
             }
         }
+    }
+}
+
+.about {
+
+    .caption {
+        margin-bottom: 70px;
+    }
+
+    &_paragraph {
+        margin-bottom: 150px;
+        font-size: 1.25rem;
+    }
+
+    &_advan {
+        max-width: 210px;
+        text-align: center;
+
+        &_caption {
+            font-size: 5.625rem;
+
+            .extra {
+                font-size: 2.812rem;
+            }
+        }
+    }
+
+    .steps_caption,
+    .try_caption {
+        margin: 100px 0;
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .step_caption {
+        margin: 100px 0 50px;
+        font-size: 1.875rem;
+        font-weight: bold;
+    }
+
+    .step_paragraph {
+        font-size: 1.25rem;
+        font-weight: 300;
+    }
+
+    .try_button {
+        width: 300px;
+        height: 80px;
+    }
+
+    .try {
+        height: 700px;
+        background-color: #000;
+    }
+}
+
+.reviews {
+
+    &_block {
+        position: relative;
+        max-width: 400px;
+        height: 750px;
+    }
+
+    .reviews_quotes {
+        margin-bottom: 50px;
+        width: 10%;
+    }
+
+    &_text {
+        font-size: 1.25rem;
+        font-weight: 300;
+    }
+
+    &_author {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding-top: 30px;
+        width: 100%;
+        height: 220px;
+        border-top: 1px solid rgba(0, 0, 0, .15);
+
+        &_name {
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        &_position {
+            margin-top: 15px;
+            font-weight: 300;
+        }
+    }
+
+    &_button {
+        position: absolute;
+        left: 15px;
+        bottom: 0;
+        width: 260px;
+        height: 60px;
+    }
+
+    &_more {
+        margin: 100px auto;
+        display: inline-block;
+        color: rgba(0, 0, 0, .5);
+        font-weight: 500;
+        transition: .3s;
+
+        &:hover {
+            color: @main;
+
+            .reviews_more_underline::after {
+                background-color: @main;
+            }
+        }
+
+        &_underline {
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                display: block;
+                width: 100%;
+                height: 1px;
+                background-color: rgba(0, 0, 0, .5);
+            }
+        }
+
+        &_arrow {
+            margin-left: 10px;
+            width: 25px;
+            transform: scaleX(-1);
+            opacity: .5;
+        }
+    }
+}
+
+.form {
+    padding: 100px 0;
+    color: #fff;
+    background-color: #131017;
+
+    &_caption {
+        margin-bottom: 30px;
+        font-size: 3.75rem;
+        font-weight: 900;
+    }
+
+    &_paragraph {
+        font-weight: 300;
+    }
+
+    .input,
+    .textarea {
+        display: block;
+        padding: 15px 20px;
+        box-sizing: border-box;
+        width: 100%;
+        color: #fff;
+        font-size: 1.25rem;
+        font-weight: 300;
+        border: none;
+        border-bottom: 1px solid #fff;
+        background-color: transparent;
+        outline: none;
+        transition: .3s;
+        appearance: none;
+
+        &:focus {
+            border-color: @main;
+        }
+    }
+
+    .input::placeholder,
+    .textarea::placeholder {
+        color: rgba(255, 255, 255, .4);
+    }
+
+    .input {
+        margin-bottom: 50px;
+    }
+
+    .textarea {
+        height: 150px;
+        resize: none;
+    }
+
+    &_button {
+        margin: 50px auto 0;
+        width: 300px;
+        height: 80px;
+        font-size: 12px;
+        background-color: transparent;
+        outline: none;
+        cursor: pointer;
+        transition: .3s;
+        appearance: none;
+
+        &:hover {
+            border-color: #fff;
+            background-color: #fff;
+        }
+    }
+}
+
+.contacts {
+    position: relative;
+
+    .map {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .1);
+    }
+
+    &_info {
+        position: relative;
+        z-index: 1;
+        padding-top: 180px;
+        padding-bottom: 180px;
+
+        &::before {
+            content: '';
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            right: -10%;
+            width: 2000px;
+            height: 100%;
+            background-color: rgba(255, 255, 255, .8);
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+        }
+
+        &_title {
+            margin-bottom: 65px;
+            font-size: 3rem;
+            font-weight: 900;
+        }
+
+        &_subtitle {
+            margin-top: 50px;
+            font-weight: 300;
+        }
+
+        &_paragraph,
+        &_link {
+            margin-top: 20px;
+            display: block;
+            color: #000;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        &_link {
+            transition: .3s;
+
+            &:hover {
+                color: @main;
+            }
+        }
+    }
+}
+
+.footer {
+    padding: 40px 0;
+    background-color: #120f15;
+    color: rgba(255, 255, 255, .7);
+    font-size: .875rem;
+
+    .logo {
+        width: 105px;
+    }
+
+    &_link {
+        display: block;
+        color: rgba(255, 255, 255, .7);
+        font-size: .875rem;
+        transition: .3s;
+
+        &:hover {
+            color: @main;
+        }
+    }
+
+    .webcat,
+    .address {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
     }
 }
 
