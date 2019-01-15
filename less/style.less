@@ -4,6 +4,7 @@
 @import "fonts";
 @import "color";
 @import "anim";
+@import "slick";
 
 body {
     font-family: Gotham Pro;
@@ -25,6 +26,7 @@ a:hover {
     color: #fff;
     text-transform: uppercase;
     border-radius: 50px;
+    border: 1px solid @main;
     box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.2);
     background-color: @main;
     transition: background .7s, color .3s;
@@ -56,10 +58,6 @@ a:hover {
             transform: translateX(0);
         }
     }
-
-    &:active {
-        transform: translate(1px, 1px);
-    }
 }
 
 .button_white {
@@ -73,11 +71,8 @@ a:hover {
     transition: .3s;
 
     &:hover {
-        box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.2);
-    }
-
-    &:active {
-        transform: translate(1px, 1px);
+        color: #fff;
+        background-color: @main;
     }
 }
 
@@ -86,6 +81,26 @@ a:hover {
     font-weight: 900;
     font-size: 3.75rem;
     text-transform: uppercase;
+}
+
+.breadcrumbs {
+    margin: 170px 0 80px;
+    font-size: .875rem;
+
+    &_link {
+        color: #000;
+        opacity: .5;
+        transition: .3s;
+
+        &:hover {
+            color: @main;
+            opacity: 1;
+        }
+    }
+
+    &_active {
+        font-weight: 400;
+    }
 }
 
 .header {
@@ -212,6 +227,20 @@ a:hover {
                 background-color: @main;
                 transition: .3s;
 
+                &::after {
+                    content: '';
+                    z-index: -1;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 0;
+                    height: 0;
+                    border-radius: 50%;
+                    background-color: #161616;
+                    transition: .3s;
+                }
+
                 &_line {
                     position: relative;
                     width: 23px;
@@ -251,12 +280,13 @@ a:hover {
                     }
                 }
 
-                &:active {
-                    transform: translate(1px, 1px);
-                }
-
                 &.menu-open {
                     background-color: #fff;
+
+                    &::after {
+                        width: 500vw;
+                        height: 500vw;
+                    }
 
                     .burger_button_line {
                         background-color: #000;
@@ -275,22 +305,28 @@ a:hover {
     }
 
     .menu {
+        margin-top: 80px;
         display: none;
+        z-index: 1;
         position: fixed;
         top: 0;
         left: 0;
-        padding-top: 10%;
-        box-sizing: border-box;
         width: 100%;
-        height: 100%;
+        height: ~"calc(100% - 80px)";
         color: #fff;
-        background-color: #161616;
+
+        &_wrap {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
 
         .fade {
             display: none;
         }
 
         &_list {
+            transform: translateY(-40px);
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
@@ -325,6 +361,45 @@ a:hover {
                 width: 100%;
             }
         }
+
+        &_footer {
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+            width: 100%;
+            color: #fff;
+            font-weight: 300;
+            transition: color .3s;
+
+            &_link {
+                position: relative;
+                margin-left: 15px;
+                color: #fff;
+                transition: .3s;
+
+                &::after {
+                    content: '';
+                    z-index: -1;
+                    position: absolute;
+                    top: 0;
+                    left: -10px;
+                    display: block;
+                    width: 1px;
+                    height: 100%;
+                    background-color: #fff;
+                    transform: skewX(-27deg);
+                    transition: .3s;
+                }
+
+                &:hover {
+                    color: #000;
+
+                    &::after {
+                        width: ~"calc(100% + 20px)";
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -334,6 +409,7 @@ a:hover {
     align-items: center;
     height: 100vh;
     min-height: 700px;
+    overflow: hidden;
 
     &_caption {
         width: 700px;
@@ -371,28 +447,6 @@ a:hover {
         font-weight: 300;
         transition: color .3s;
 
-        &.menu-open {
-            z-index: 101;
-            position: fixed;
-            bottom: 50px;
-            left: 0;
-            color: #fff;
-
-            .front_page_footer {
-                &_link {
-                    color: #fff;
-
-                    &::after {
-                        background-color: #fff;
-                    }
-
-                    &:hover {
-                        color: #000;
-                    }
-                }
-            }
-        }
-
         &_link {
             position: relative;
             margin-left: 15px;
@@ -426,6 +480,15 @@ a:hover {
     &_wrap {
         position: relative;
         height: 100%;
+
+        .blob {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150%;
+            height: 150%;
+        }
 
         .scroll {
             position: absolute;
@@ -619,13 +682,11 @@ a:hover {
             .services_block_buttons {
                 .more_button {
                     color: #fff;
-                    border: 1px solid transparent;
+                    border: 1px solid @main;
                     background-color: @main;
 
                     &:hover {
                         color: #000;
-                        border: 1px solid #fff;
-                        box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.2);
                         background-color: #fff;
 
                         &::after {
@@ -787,6 +848,8 @@ a:hover {
         }
 
         &:hover {
+            color: @main;
+            background-color: transparent;
 
             .cases_more_img {
                 transform: rotate(360deg);
@@ -1108,6 +1171,231 @@ a:hover {
 
             &:hover {
                 color: @main;
+            }
+        }
+    }
+}
+
+.page-cases {
+
+    .caption {
+        margin-bottom: 0;
+    }
+
+    &_back {
+        margin-bottom: 30px;
+        text-align: right;
+
+        &_button {
+            color: #000;
+            font-weight: 300;
+            transition: .3s;
+
+            &_img {
+                margin-right: 15px;
+                width: 20px;
+            }
+
+            &:hover {
+                color: #000;
+                opacity: .5;
+            }
+        }
+    }
+
+    .cases_slider {
+        margin-bottom: 50px;
+        box-shadow: 0px 0px 126px 14px rgba(0, 0, 0, .05);
+
+        &_control {
+            margin-bottom: 200px;
+        }
+    }
+
+    .cases_slide {
+
+        &_header {
+            padding: 35px 50px 25px;
+            color: #fff;
+            font-weight: bold;
+            background-color: @main;
+
+            .col-name {
+                font-size: 1.125rem;
+            }
+
+            .col-desc {
+                font-size: 1.875rem;
+            }
+        }
+
+        &_content {
+            padding: 70px 0;
+
+            &_caption {
+                margin-bottom: 90px;
+                text-align: center;
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+
+            &_wrap {
+                display: flex;
+            }
+
+            &_links,
+            &_desc {
+                padding-left: 20px;
+                border-right: 20px;
+                box-sizing: border-box;
+            }
+
+            &_links {
+                width: 40%;
+                text-align: center;
+
+                &_img {
+                    display: block;
+                    width: 100%;
+                }
+
+                &_site {
+                    margin-top: 80px;
+                    display: inline-block;
+                    color: #000;
+                    font-size: .875rem;
+                    opacity: .7;
+                    transition: .3s;
+
+                    .icon {
+                        display: inline-block;
+                        margin-left: 5px;
+                        width: 14px;
+                    }
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+
+                .button_white {
+                    margin: 50px auto 0;
+                    width: 300px;
+                    height: 80px;
+                    font-size: .875rem;
+                }
+            }
+
+            &_desc {
+                width: 60%;
+
+                .features {
+                    margin-bottom: 100px;
+                    display: flex;
+
+                    &_block {
+                        padding: 0 10px;
+                        box-sizing: border-box;
+                        width: 33.33%;
+                        text-align: center;
+                        border-right: 1px solid rgba(0, 0, 0, .15);
+
+                        &:last-child {
+                            border-right: none;
+                        }
+
+                        &_caption {
+                            color: @main;
+                            font-size: 4.375rem;
+                            font-weight: 900;
+                        }
+
+                        &_paragraph {
+                            font-size: 1.125rem;
+                            font-weight: 300;
+                        }
+                    }
+                }
+
+                &_paragraph {
+                    margin-bottom: 50px;
+                    font-size: 1.125rem;
+                    font-weight: 300;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                &_subtitle {
+                    margin-bottom: 30px;
+                    color: @main;
+                    font-size: 1.125rem;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .cases_slider_control {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .slider_button {
+            color: #000;
+            font-weight: 300;
+
+            &:hover {
+                opacity: .5;
+            }
+
+            &.prev_button {
+                .arrow {
+                    margin-right: 5px;
+                    width: 22px;
+                }
+            }
+
+            &.next_button {
+                .arrow {
+                    margin-left: 5px;
+                    width: 22px;
+                    transform: scaleX(-1);
+                }
+            }
+        }
+
+        .dots {
+
+            .slick-dots {
+                margin: 0;
+
+                li {
+                    position: relative;
+                    margin: 0 5px;
+                    display: inline-block;
+
+                    button {
+                        padding: 0;
+                        width: 7px;
+                        height: 7px;
+                        color: transparent;
+                        border: none;
+                        border-radius: 50%;
+                        background-color: #b1b1b1;
+                        cursor: pointer;
+                        outline: none;
+                        overflow: hidden;
+                        vertical-align: middle;
+                    }
+
+                    &.slick-active {
+                        button {
+                            background-color: @main;
+                        }
+                    }
+                }
             }
         }
     }

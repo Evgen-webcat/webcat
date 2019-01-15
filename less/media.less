@@ -48,6 +48,10 @@
         font-size: 3rem;
     }
 
+    .breadcrumbs {
+        margin: 130px 0 50px;
+    }
+
     .header {
         padding-bottom: 30px;
         height: 80px;
@@ -300,13 +304,13 @@
             font-size: .875rem;
         }
 
-    .input {
-        margin-bottom: 30px;
-    }
+        .input {
+            margin-bottom: 30px;
+        }
 
-    .textarea {
-        height: 120px;
-    }
+        .textarea {
+            height: 120px;
+        }
 
         &_button {
             width: 260px;
@@ -317,32 +321,128 @@
 
     .contacts {
 
-    &_info {
-        padding-top: 100px;
-        padding-bottom: 100px;
+        &_info {
+            padding-top: 100px;
+            padding-bottom: 100px;
 
-        &_title {
-            margin-bottom: 50px;
-            font-size: 2.25rem;
-        }
+            &_title {
+                margin-bottom: 50px;
+                font-size: 2.25rem;
+            }
 
-        &_subtitle {
-            margin-top: 30px;
-        }
+            &_subtitle {
+                margin-top: 30px;
+            }
 
-        &_paragraph,
-        &_link {
-            margin-top: 20px;
-            font-size: 1.125rem;
+            &_paragraph,
+            &_link {
+                margin-top: 20px;
+                font-size: 1.125rem;
+            }
         }
     }
-}
 
-.footer {
-    font-size: .75rem;
+    .page-cases {
 
-    &_link {
+        .cases_slide {
+
+            &_header {
+                padding: 20px 0 10px;
+
+                .col-name {
+                    font-size: .875rem;
+                }
+
+                .col-desc {
+                    font-size: 1.25rem;
+                }
+            }
+
+            &_content {
+                padding: 50px 0;
+
+                &_caption {
+                    margin-bottom: 50px;
+                }
+
+                &_links,
+                &_desc {
+                    padding-left: 15px;
+                    border-right: 15px;
+                }
+
+                &_links {
+
+                    &_site {
+                        margin-top: 30px;
+                        font-size: .75rem;
+                    }
+
+                    .button_white {
+                        margin: 30px auto 0;
+                        width: 260px;
+                        height: 60px;
+                        font-size: .75rem;
+                    }
+                }
+
+                &_desc {
+
+                    .features {
+                        margin-bottom: 50px;
+
+                        &_block {
+
+                            &_caption {
+                                font-size: 2.187rem;
+                            }
+
+                            &_paragraph {
+                                font-size: .875rem;
+                            }
+                        }
+                    }
+
+                    &_paragraph {
+                        margin-bottom: 30px;
+                        font-size: .875rem;
+                    }
+
+                    &_subtitle {
+                        margin-bottom: 10px;
+                        font-size: .875rem;
+                    }
+                }
+            }
+        }
+
+        .cases_slider_control {
+            margin-bottom: 100px;
+        }
+    }
+
+    .footer {
         font-size: .75rem;
+
+        &_link {
+            font-size: .75rem;
+        }
     }
 }
+
+@media (max-width: 1200px) {
+    .header {
+        .menu {
+
+            &_list {
+                width: 100%;
+                height: auto;
+                text-align: center;
+
+                li {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }

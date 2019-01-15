@@ -15,17 +15,15 @@ $(document).ready(function () {
 
         if (!$(this).hasClass('menu-open')) {
             $('.header').addClass('open');
-            $('.menu').stop().slideDown(300, function () {
-                $('.front_page_footer').addClass('menu-open');
+            $('.menu').stop().show(300, function () {
                 $('.fade').each(function (index) {
                     $(this).stop(true).delay(100 * index).fadeIn();
                 });
             });
         } else {
-            $('.fade').stop(true).fadeOut(500);
+            $('.fade').stop(true).fadeOut(300);
             $('.header').removeClass('open');
-            $('.front_page_footer').removeClass('menu-open');
-            $('.menu').stop().slideUp(300);
+            $('.menu').stop().delay(300).hide(0);
         }
 
         $(this).toggleClass('menu-open');
