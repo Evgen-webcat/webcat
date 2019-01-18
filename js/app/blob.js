@@ -194,5 +194,41 @@ $(document).ready(function () {
             WAVE_3_MOTION_SPEED: 3
 
         });
+
+        var blob = new BlobAnimation("blob-bg", {
+
+			//Blob main settings
+				BLOB_SIZE: 220,
+				BLOB_DISTANCE: 0,
+				DETALISATION: 60,
+				PERSPECTIVE_DISTORTION: 5,
+				ROTATION_SPEED: 2,
+
+			//Dot settins
+				DOT_SIZE: 1,
+				DOT_COLOR: "#556677",
+
+			//Mouse settings
+				MOUSE_DISTANCE_MIN: 20,
+				MOUSE_DISTANCE_MAX: 20000,
+				MOUSE_SENSITIVITY: 0.1,
+				INERTIAL_TIME: 2,
+
+			//Shape settins
+				//Shape main settings
+					INITIAL_SHAPE: {
+									  	wave1: {amplitude: 70, frequency: 3, phase: 0},
+									  	wave2: {amplitude: 60, frequency: 2, phase: 0},
+									  	wave3: {amplitude: 50, frequency: 2, phase: 0}
+								   },
+					USE_MORPHING: false,
+					USE_WAVE_MOTION: true,
+					USE_WAVE_SWING: false,
+
+				//Wave motion settings
+					WAVE_1_MOTION_SPEED: 0.85,
+					WAVE_2_MOTION_SPEED: 0.5,
+					WAVE_3_MOTION_SPEED: 1.5
+		});
     }
 });

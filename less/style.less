@@ -21,8 +21,9 @@ a:hover {
 
 .button {
     position: relative;
-    display: block;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #fff;
     text-transform: uppercase;
     border-radius: 50px;
@@ -81,6 +82,10 @@ a:hover {
     font-weight: 900;
     font-size: 3.75rem;
     text-transform: uppercase;
+}
+
+.blue {
+    color: @main;
 }
 
 .breadcrumbs {
@@ -238,7 +243,7 @@ a:hover {
                     height: 0;
                     border-radius: 50%;
                     background-color: #161616;
-                    transition: .3s;
+                    transition: .5s;
                 }
 
                 &_line {
@@ -435,7 +440,6 @@ a:hover {
             margin-top: 85px;
             width: 400px;
             height: 90px;
-            line-height: 90px;
         }
     }
 
@@ -620,10 +624,11 @@ a:hover {
 
             .more_button {
                 position: relative;
-                display: block;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 width: 260px;
                 height: 60px;
-                line-height: 60px;
                 text-align: center;
                 color: #000;
                 font-size: .75rem;
@@ -700,13 +705,23 @@ a:hover {
 }
 
 .test {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     text-align: center;
     color: #fff;
-    background-color: #000;
+
+    .blob-bg {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+    }
 
     &_caption {
         font-size: 3.75rem;
@@ -723,7 +738,6 @@ a:hover {
         margin: 55px auto 0;
         width: 300px;
         height: 80px;
-        line-height: 80px;
     }
 }
 
@@ -1063,6 +1077,11 @@ a:hover {
         font-weight: 300;
     }
 
+    &_text {
+        font-size: 3rem;
+        font-weight: 900;
+    }
+
     .input,
     .textarea {
         display: block;
@@ -1110,6 +1129,7 @@ a:hover {
         appearance: none;
 
         &:hover {
+            color: @main;
             border-color: #fff;
             background-color: #fff;
         }
@@ -1397,6 +1417,309 @@ a:hover {
                     }
                 }
             }
+        }
+    }
+}
+
+.landingpage-test {
+    position: relative;
+    margin-top: 150px;
+    padding-bottom: 200px;
+
+    .caption {
+        margin: 0 0 30px;
+    }
+
+    &_paragraph {
+        margin-bottom: 70px;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    &_icons {
+        margin: 0 -30px;
+        display: flex;
+        width: 90%;
+
+        &_block {
+            padding: 0 30px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 33.33%;
+        }
+
+        &_img {
+            margin-bottom: 25px;
+            width: 70px;
+        }
+
+        &_info {
+            margin-bottom: 0;
+            font-size: 1.125rem;
+            font-weight: 300;
+        }
+    }
+
+    .button {
+        margin-top: 70px;
+        width: 300px;
+        height: 75px;
+    }
+
+    &_img_block {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .container {
+            height: 100%;
+        }
+    }
+
+    &_img {
+        float: right;
+        height: 100%;
+    }
+}
+
+.landingpage-desc {
+    padding: 100px 0;
+    background-color: #f8f8f8;
+
+    &_caption {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    &_paragraph {
+        margin-top: 50px;
+        font-size: 1.25rem;
+        font-weight: 300;
+    }
+
+    &_price {
+        margin-top: 70px;
+        font-size: 1.125rem;
+
+        &_icon {
+            margin-right: 20px;
+            width: 23px;
+            height: 21px;
+        }
+
+        .bold {
+            font-size: 1.875rem;
+            font-weight: bold;
+        }
+    }
+
+    &_time {
+        margin-top: 25px;
+        font-size: 1.125rem;
+        font-weight: bold;
+
+        &_icon {
+            margin-right: 25px;
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    .button_white {
+        margin-top: 100px;
+        width: 320px;
+        height: 70px;
+    }
+
+    &_list {
+        margin-top: 50px;
+    }
+
+    &_point {
+        position: relative;
+        margin-bottom: 30px;
+        padding-left: 20px;
+        line-height: 1;
+        font-size: 1.25rem;
+        font-weight: 300;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: @main;
+        }
+    }
+}
+
+.spheres {
+    padding: 100px 0;
+
+    &_caption {
+        margin-bottom: 50px;
+        font-size: 1.875rem;
+        font-weight: bold;
+    }
+
+    &_subtitle {
+        margin-bottom: 35px;
+        color: @main;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    &_list {
+        font-size: 1.125rem;
+        font-weight: 300;
+    }
+}
+
+.howitwork {
+    padding-bottom: 50px;
+
+    &_block {
+        position: relative;
+        margin-bottom: 25px;
+        display: inline-block;
+
+        &_icon {
+            width: 60px;
+        }
+
+        &_number {
+            margin-top: 10px;
+            text-align: center;
+            font-size: .687rem;
+            font-weight: bold;
+
+            .bold {
+                font-size: 1.125rem;
+            }
+        }
+
+        &_line {
+            position: relative;
+            margin-top: 20px;
+            width: 25px;
+            height: 5px;
+            border-radius: 5px;
+            background-color: @main;
+
+            &::before {
+                content: '';
+                z-index: -1;
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                width: 405px;
+                height: 5px;
+                transform: translateX(-30%);
+                border-radius: 5px;
+                background-color: #f2f2f2;
+            }
+
+            &.semicircle-right,
+            &.semicircle-left,
+            &.semicircle-last {
+                &::after {
+                    content: '';
+                    z-index: -1;
+                    position: absolute;
+                    top: 0;
+                    display: block;
+                    border-top: 5px solid #f2f2f2;
+                    border-right: 5px solid #f2f2f2;
+                    border-bottom: 5px solid transparent;
+                    border-left: 5px solid transparent;
+                    border-radius: 50%;
+                }
+            }
+
+            &.semicircle-right::after {
+                left: 99px;
+                width: 366px;
+                height: 366px;
+                transform: rotate(45deg);
+            }
+
+            &.semicircle-left::after {
+                right: -20px;
+                width: 324px;
+                height: 324px;
+                transform: rotate(-135deg);
+            }
+
+            &.semicircle-last::after {
+                left: 130px;
+                width: 303px;
+                height: 303px;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    &_text {
+        margin-bottom: 130px;
+        font-size: .875rem;
+
+        .bold {
+            font-weight: bold;
+        }
+    }
+
+    .rocket {
+        display: inline-block;
+
+        &_circle {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 155px;
+            height: 155px;
+            border-radius: 50%;
+            background-color: @main;
+
+
+
+            &::before {
+                content: '';
+                z-index: -1;
+                position: absolute;
+                display: block;
+                left: 100%;
+                width: 530px;
+                height: 5px;
+                background-color: #f2f2f2;
+
+            }
+
+            &_img {
+                width: 45%;
+            }
+        }
+
+        &_text {
+            margin-top: 20px;
+            text-align: center;
+            font-size: .875rem;
+            font-weight: bold;
         }
     }
 }
