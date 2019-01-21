@@ -77,7 +77,7 @@
 
     .button,
     .button_white {
-        font-size: .875rem;
+        font-size: .75rem;
     }
 
     .caption {
@@ -98,6 +98,8 @@
         }
 
         .menu {
+            margin-top: 80px;
+            height: ~"calc(100% - 80px)";
 
             &_list {
                 height: 300px;
@@ -624,11 +626,55 @@
         width: 470px;
     }
 
+    .vacancies {
+
+        &_block {
+            padding: 50px 0;
+
+            &_icon {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        &_caption {
+            margin-bottom: 30px;
+            font-size: 1.375rem;
+        }
+
+        &_subtitle {
+            margin-bottom: 20px;
+            font-size: .875rem;
+        }
+
+        &_list {
+            margin-bottom: 30px;
+
+            &_point {
+                margin-bottom: 5px;
+                font-size: .875rem;
+            }
+        }
+
+        .button_white {
+            margin-bottom: 25px;
+            width: 220px;
+            height: 50px;
+        }
+
+        .whatch_vacancy {
+            font-size: .875rem;
+        }
+    }
+
     .footer {
         font-size: .75rem;
 
         &_link {
-            font-size: .75rem;
+
+            a {
+                font-size: .75rem;
+            }
         }
     }
 }

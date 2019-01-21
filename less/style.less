@@ -25,6 +25,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     color: #fff;
+    font-size: .875rem;
     text-transform: uppercase;
     border-radius: 50px;
     border: 1px solid @main;
@@ -66,6 +67,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     color: @main;
+    font-size: .875rem;
     font-weight: bold;
     border: 1px solid @main;
     border-radius: 50px;
@@ -92,7 +94,7 @@ a:hover {
     margin: 170px 0 80px;
     font-size: .875rem;
 
-    &_link {
+    a {
         color: #000;
         opacity: .5;
         transition: .3s;
@@ -103,7 +105,7 @@ a:hover {
         }
     }
 
-    &_active {
+    .breadcrumb_last {
         font-weight: 400;
     }
 }
@@ -310,14 +312,14 @@ a:hover {
     }
 
     .menu {
-        margin-top: 80px;
+        margin-top: 120px;
         display: none;
         z-index: 1;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: ~"calc(100% - 80px)";
+        height: ~"calc(100% - 120px)";
         color: #fff;
 
         &_wrap {
@@ -413,7 +415,7 @@ a:hover {
     display: flex;
     align-items: center;
     height: 100vh;
-    min-height: 700px;
+    min-height: 800px;
     overflow: hidden;
 
     &_caption {
@@ -1724,6 +1726,92 @@ a:hover {
     }
 }
 
+.vacancies {
+    padding-bottom: 50px;
+
+    &_block {
+        padding: 100px 0;
+        border-bottom: 1px solid #e5e5e5;
+
+        &:last-child {
+            border: none;
+        }
+
+        &_icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 350px;
+            height: 350px;
+            border: 1px solid #e5e5e5;
+            border-radius: 50%;
+
+            &_img {
+                width: 50%;
+            }
+        }
+    }
+
+    &_caption {
+        margin-bottom: 50px;
+        font-size: 1.875rem;
+        font-weight: 900;
+    }
+
+    &_subtitle {
+        margin-bottom: 30px;
+        font-size: 1.125rem;
+        font-weight: bold;
+    }
+
+    &_list {
+        margin-bottom: 50px;
+        padding-left: 50px;
+
+        &_point {
+            position: relative;
+            margin-bottom: 15px;
+            font-size: 1.125rem;
+            font-weight: 300;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: -20px;
+                transform: translateY(-50%);
+                display: block;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: @main;
+            }
+        }
+    }
+
+    .button_white {
+        margin-bottom: 25px;
+        width: 260px;
+        height: 60px;
+    }
+
+    .whatch_vacancy {
+        font-size: 1.125rem;
+        font-weight: 300;
+        color: rgba(0, 0, 0, .7);
+        transition: .3s;
+
+        &:hover {
+            color: @main;
+            text-decoration: underline;
+        }
+    }
+}
+
 .footer {
     padding: 40px 0;
     background-color: #120f15;
@@ -1735,13 +1823,16 @@ a:hover {
     }
 
     &_link {
-        display: block;
-        color: rgba(255, 255, 255, .7);
-        font-size: .875rem;
-        transition: .3s;
 
-        &:hover {
-            color: @main;
+        a {
+            display: block;
+            color: rgba(255, 255, 255, .7);
+            font-size: .875rem;
+            transition: .3s;
+
+            &:hover {
+                color: @main;
+            }
         }
     }
 
