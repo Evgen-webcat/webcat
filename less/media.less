@@ -11,13 +11,12 @@
         &_blocks {
 
             .cases_block {
+                display: flex;
+                align-items: center;
 
                 &_content {
-                    padding: 11% 0 0 11%;
-
-                    &_wrap {
-                        width: 350px;
-                    }
+                    padding: 0 0 0 11%;
+                    height: auto;
                 }
             }
         }
@@ -178,7 +177,6 @@
         }
 
         &_paragraph {
-            margin-top: 30px;
             font-size: 1rem;
         }
 
@@ -192,7 +190,7 @@
     .cases {
 
         &_blocks .cases_block_content_wrap {
-            width: 300px;
+            width: 90%;
         }
 
         &_button {
@@ -268,7 +266,7 @@
         }
 
         .step_caption {
-            margin: 50px 0 30px;
+            margin: 50px 0 20px;
             font-size: 1.5rem;
         }
 
@@ -286,7 +284,6 @@
     .reviews {
 
         &_block {
-            max-width: 320px;
             height: 550px;
         }
 
@@ -664,6 +661,50 @@
 
         .whatch_vacancy {
             font-size: .875rem;
+        }
+    }
+
+    .review {
+        margin-bottom: 50px;
+
+        &_paragraph {
+            font-size: 1rem;
+        }
+
+        &_author {
+            margin-top: 30px;
+            font-size: 1.125rem;
+        }
+    }
+
+    .skills {
+
+        &_block {
+            margin-bottom: 50px;
+            padding: 30px 15px;
+            width: 24%;
+            height: 350px;
+
+            &_caption {
+                margin-bottom: 30px;
+                height: 28px;
+                font-size: 1.125rem;
+            }
+
+            &_paragraph {
+                font-size: .75rem;
+            }
+
+            svg {
+                width: 150px;
+            }
+        }
+    }
+
+    .clients {
+        &_caption {
+            margin-bottom: 50px;
+            font-size: 2.25rem;
         }
     }
 
